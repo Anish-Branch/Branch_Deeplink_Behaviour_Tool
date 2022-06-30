@@ -13,6 +13,7 @@ async function getData() {
 }
 
 let dataList;
+let hmap = [0, 0, 0, 0, 0, 0];
 getData().then((data) => {
   dataList = data;
   setSelectors(data);
@@ -33,7 +34,12 @@ function setSelectors(items) {
   });
 
   selectors.forEach((selector, index) => {
-    selector.innerHTML = getStr(uniqueData[index]);
+    if (hmap[index] === 0) {
+      let str = `<option >Please select</option>`;
+      selector.innerHTML = str + getStr(uniqueData[index]);
+    } else {
+      selector.innerHTML = getStr(uniqueData[index]);
+    }
   });
 }
 
@@ -41,6 +47,7 @@ function getStr(items) {
   let str = "";
   items.forEach((item) => {
     let temp = item.split(" ").join("_");
+
     str += `<option value=${temp}>${item}</option>`;
   });
 
@@ -53,6 +60,7 @@ let endIndex;
 selectors.forEach((selector) => {
   selector.addEventListener("change", (e) => {
     let index = selectorsArray.indexOf(selector);
+    hmap[index] = 1;
     startIndex = dataList[index].indexOf(selector.value.split("_").join(" "));
     endIndex = dataList[index].lastIndexOf(selector.value.split("_").join(" "));
 
@@ -65,7 +73,7 @@ selectors.forEach((selector) => {
 });
 
 button.addEventListener("click", (e) => {
-  if (startIndex === endIndex) {
+  if (startIndex === endIndex && !hmap.includes(0)) {
     results.forEach((result, index) => {
       result.value = dataList[index + 6][0];
     });
