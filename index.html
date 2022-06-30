@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Expected Deeplink Behaviour Tool</title>
+  </head>
+  <body class="loading">
+    <div class="container">
+      <div class="main_header">
+        <div class="header_image">
+          <img src="Branch_Logo.png" alt="Branch" />
+        </div>
+        <div class="header_content">
+          <h2>Expected Deeplink Behaviour Tool</h2>
+        </div>
+      </div>
+      <form action="#" class="main_form">
+        <div class="item item-1">
+          <label for="channel">Channel</label>
+          <select name="channel" id="channel" class="input_select"></select>
+        </div>
+        <div class="item item-2">
+          <label for="partner">Partner / Placement</label>
+          <select name="partner" id="partner" class="input_select"></select>
+        </div>
+        <div class="item item-3">
+          <label for="platform">Platform</label>
+          <select name="platform" id="platform" class="input_select"></select>
+        </div>
+        <div class="item item-4">
+          <label for="app_status">App Status</label>
+          <select
+            name="app_status"
+            id="app_status"
+            class="input_select"
+          ></select>
+        </div>
+        <div class="item item-5">
+          <label for="idfa_status_source">IDFA Status (source)</label>
+          <select
+            name="idfa_status_source"
+            id="idfa_status_source"
+            class="input_select"
+          ></select>
+        </div>
+        <div class="item item-6">
+          <label for="idfa_status_client">IDFA Status (client app)</label>
+          <select
+            name="idfa_status_client"
+            id="idfa_status_client"
+            class="input_select"
+          ></select>
+        </div>
+        <div class="form_submit">
+          <input
+            type="submit"
+            value="Show expected behaviour"
+            id="submit_form"
+          />
+        </div>
+      </form>
+      <div class="main_result">
+        <div class="result result-1">
+          <label for="link_type">Recommended Link Type</label>
+          <input
+            type="text"
+            name="link_type"
+            disabled
+            id="res-1"
+            class="output_result"
+          />
+        </div>
+        <div class="result result-2">
+          <label for="deeplink">Deeplink Should Work?</label>
+          <input
+            type="text"
+            name="deeplink"
+            disabled
+            id="res-2"
+            class="output_result"
+          />
+        </div>
+        <div class="result result-3">
+          <label for="branch_method">Branch Attribution Method</label>
+          <input
+            type="text"
+            name="branch_method"
+            disabled
+            id="res-3"
+            class="output_result"
+          />
+        </div>
+        <div class="result result-4">
+          <label for="branch_type">Branch Attribution Type</label>
+          <input
+            type="text"
+            name="branch_type"
+            disabled
+            id="res-4"
+            class="output_result"
+          />
+        </div>
+        <div class="result result-5">
+          <label for="impact">IOS Private Relay Impact</label>
+          <input
+            type="text"
+            name="impact"
+            disabled
+            id="res-5"
+            class="output_result"
+          />
+        </div>
+        <div class="result result-6">
+          <label for="cost_data">Cost Data</label>
+          <input
+            type="text"
+            name="cost_data"
+            disabled
+            id="res-6"
+            class="output_result"
+          />
+        </div>
+        <div class="result result-7">
+          <label for="open_data">Install / Open Data</label>
+          <input
+            type="text"
+            name="open_data"
+            disabled
+            id="res-7"
+            class="output_result"
+          />
+        </div>
+        <div class="result result-8">
+          <label for="revenue">Post Click Revenue</label>
+          <input
+            type="text"
+            name="revenue"
+            disabled
+            id="res-8"
+            class="output_result"
+          />
+        </div>
+        <div class="result result-9">
+          <label for="sign_ups">Post Install Sign-ups</label>
+          <input
+            type="text"
+            name="sign_ups"
+            disabled
+            id="res-9"
+            class="output_result"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div class="loader"><h3>Loading...</h3></div>
+    <div class="error_field"><h3>Please select all the fields !</h3></div>
+  </body>
+</html>

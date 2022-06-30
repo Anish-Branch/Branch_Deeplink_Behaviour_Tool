@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.main_form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+  column-gap: 30px;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #777;
+  padding: 5px 0;
+}
+
+.item select {
+  width: 280px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: solid 1px #eee;
+  border-radius: 5px;
+  color: #666;
+  font-weight: 700;
+}
+
+.item select:hover,
+select:focus {
+  outline: none;
+  border: solid 1px #ddd;
+}
+
+.form_submit {
+  grid-column: 1/-1;
+  justify-self: center;
+}
+
+.form_submit input {
+  padding: 15px 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0077ff;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.main_result {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 3rem;
+  row-gap: 30px;
+  column-gap: 30px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+}
+.result label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #777;
+  padding: 5px 0;
+}
+.result input {
+  width: 280px;
+  padding: 10px 12px;
+  border-radius: 5px;
+  border: solid 1px #ddd;
+  color: #555;
+  font-weight: 700;
+  user-select: none;
+  pointer-events: none;
+}
+
+.result:nth-of-type(1) input {
+  background-color: #fafad2;
+}
+.result:nth-of-type(2) input {
+  background-color: #fecfd7;
+}
+.result:nth-of-type(3) input {
+  background-color: #a7cad8;
+}
+.result:nth-of-type(4) input {
+  background-color: #9ff09f;
+}
+.result:nth-of-type(5) input {
+  background-color: #e0ffff;
+}
+.result:nth-of-type(6) input {
+  background-color: #edc7b8;
+}
+.result:nth-of-type(7) input {
+  background-color: #b0c4de;
+}
+.result:nth-of-type(8) input {
+  background-color: #deb887;
+}
+.result:nth-of-type(9) input {
+  background-color: #99e1dd;
+}
+
+.error_field {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  width: 220px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f08080;
+  border-radius: 10px;
+  border: solid 1px #ccc;
+  color: #fff;
+  padding: 0 5px;
+  visibility: hidden;
+}
+
+.error .container {
+  opacity: 0.8;
+  filter: blur(2px);
+  user-select: none;
+  pointer-events: none;
+}
+
+.error .error_field {
+  visibility: visible;
+}
+
+.loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  width: 220px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  border-radius: 10px;
+
+  color: #fff;
+  padding: 0 5px;
+  visibility: hidden;
+}
+
+.loading .container {
+  opacity: 0.8;
+  filter: blur(3px);
+  user-select: none;
+  pointer-events: none;
+}
+
+.loading .loader {
+  visibility: visible;
+}
+
+.main_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.header_image {
+  width: 150px;
+  height: 100px;
+}
+
+.header_image img {
+  width: 100%;
+}
+.header_content {
+  transform: translateY(-150%);
+}
+.header_content h2 {
+  font-size: 16px;
+  color: #222;
+}
+
+@media screen and (max-width: 600px) {
+  .main_form {
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+  .item select {
+    width: auto;
+  }
+
+  .main_result {
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+  .result input {
+    width: auto;
+  }
+  .form_submit {
+    margin-top: 1rem;
+  }
+  .main_header {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .main_form {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+  }
+  .item select {
+    width: 100%;
+  }
+
+  .main_result {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+    padding-top: 2rem;
+  }
+  .result input {
+    width: 100%;
+  }
+  .form_submit {
+    margin-top: 1rem;
+  }
+  .main_header {
+    margin-bottom: 1rem;
+  }
+}
