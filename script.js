@@ -4,7 +4,7 @@ const button = document.getElementById("submit_form");
 const body = document.querySelector("body");
 async function getData() {
   const response = await fetch(
-    "https://script.google.com/macros/s/AKfycbyF0MCPXW8F0PoTWE-Sf37SH-hChwtJHumMxHCMwDCCnb0UE4y06g7K0vCQm0Pb9M1BnA/exec"
+    "https://script.google.com/a/macros/branch.io/s/AKfycbxk_3d3mW62VVu4c1Ht4jDDXXt2L6OxE89xHDCHOjv9iLpEgKs1q0TLIj5Y9IQWYZyX/exec"
   );
 
   const data = await response.json();
