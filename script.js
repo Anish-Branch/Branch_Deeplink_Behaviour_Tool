@@ -102,10 +102,10 @@ function showInputValues() {
   selectors.forEach((selector) => {
     arr.push(selector.value.split("_").join(" "));
   });
-  let str = `Showing results for <b>${arr[0]}</b>(channel), <b>${arr[1]}</b>
+  let str = `Showing results for <b>${arr[0]}</b> (channel), <b>${arr[1]}</b>
   (partner/placement),
-  <b>${arr[2]}</b>(platform), <b>${arr[3]}</b>(App Status), <b>${arr[4]}</b>(IDFA Status (source)),
-  <b>${arr[5]}</b>(IDFA Status(Client app))`;
+  <b>${arr[2]}</b> (platform), <b>${arr[3]}</b> (App Status), <b>${arr[4]}</b> (IDFA/GAID Status (source)),
+  <b>${arr[5]}</b> (IDFA/GAID Status(client app))`;
 
   document.querySelector(".current_selected_inputs").innerHTML = str;
 }
