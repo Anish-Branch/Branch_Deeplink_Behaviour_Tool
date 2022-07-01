@@ -4,7 +4,7 @@ const button = document.getElementById("submit_form");
 const body = document.querySelector("body");
 async function getData() {
   const response = await fetch(
-    "https://script.google.com/macros/s/AKfycbwXkVQEb9kxhSpPBkCXqdHMiucaxPC_5Vd-S_3lEeZwJoHf3p49Bgfzd0OY-sy3T73p/exec"
+    "https://script.google.com/macros/s/AKfycbyF0MCPXW8F0PoTWE-Sf37SH-hChwtJHumMxHCMwDCCnb0UE4y06g7K0vCQm0Pb9M1BnA/exec"
   );
 
   const data = await response.json();
@@ -14,11 +14,18 @@ async function getData() {
 
 let dataList;
 let hmap = [0, 0, 0, 0, 0, 0];
-getData().then((data) => {
-  dataList = data;
-  setSelectors(data);
-  body.classList.remove("loading");
-});
+
+function loadData() {
+  getData().then((data) => {
+    dataList = data;
+    hmap = [0, 0, 0, 0, 0, 0];
+    setSelectors(data);
+    body.classList.remove("loading");
+    button.disabled = true;
+  });
+}
+
+loadData();
 
 function setSelectors(items) {
   const uniqueData = [];
@@ -69,6 +76,7 @@ selectors.forEach((selector) => {
     });
 
     setSelectors(dataList);
+    if (!hmap.includes(0)) button.disabled = false;
   });
 });
 
@@ -77,6 +85,8 @@ button.addEventListener("click", (e) => {
     results.forEach((result, index) => {
       result.value = dataList[index + 6][0];
     });
+    showInputValues();
+    loadData();
   } else {
     body.classList.add("error");
     setTimeout(() => {
@@ -86,3 +96,16 @@ button.addEventListener("click", (e) => {
 
   e.preventDefault();
 });
+
+function showInputValues() {
+  let arr = [];
+  selectors.forEach((selector) => {
+    arr.push(selector.value.split("_").join(" "));
+  });
+  let str = `Showing results for <b>${arr[0]}</b>(channel), <b>${arr[1]}</b>
+  (partner/placement),
+  <b>${arr[2]}</b>(platform), <b>${arr[3]}</b>(App Status), <b>${arr[4]}</b>(IDFA Status (source)),
+  <b>${arr[5]}</b>(IDFA Status(Client app))`;
+
+  document.querySelector(".current_selected_inputs").innerHTML = str;
+}
