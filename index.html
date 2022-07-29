@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Expected Deep Link Behaviour Tool</title>
+    <title>Expected Deeplink Behaviour Tool</title>
   </head>
   <body class="loading">
     <div class="container">
@@ -14,24 +14,37 @@
           <img src="Branch_Logo.png" alt="Branch" />
         </div>
         <div class="header_content">
-          <h2>Expected Deep Link Behaviour Tool</h2>
+          <h2>Expected Deeplink Behaviour Tool</h2>
         </div>
       </div>
       <form action="#" class="main_form">
         <div class="item item-1">
-          <label for="channel">Channel</label>
+          <div class="tool_tip">
+            <label for="channel">Channel</label>
+            <div class="tip">Please select</div>
+          </div>
           <select name="channel" id="channel" class="input_select"></select>
         </div>
         <div class="item item-2">
-          <label for="partner">Partner / Placement</label>
+          <div class="tool_tip">
+            <label for="partner">Partner / Placement</label>
+            <div class="tip">Select click location</div>
+          </div>
           <select name="partner" id="partner" class="input_select"></select>
         </div>
         <div class="item item-3">
-          <label for="platform">Platform</label>
+          <div class="tool_tip">
+            <label for="platform">Platform</label>
+
+            <div class="tip">Please select</div>
+          </div>
           <select name="platform" id="platform" class="input_select"></select>
         </div>
         <div class="item item-4">
-          <label for="app_status">App Status</label>
+          <div class="tool_tip">
+            <label for="app_status">App Status</label>
+            <div class="tip">Please select</div>
+          </div>
           <select
             name="app_status"
             id="app_status"
@@ -39,7 +52,10 @@
           ></select>
         </div>
         <div class="item item-5">
-          <label for="idfa_status_source">IDFA/GAID Status (source)</label>
+          <div class="tool_tip">
+            <label for="idfa_status_source">IDFA Status (source)</label>
+            <div class="tip">Please select</div>
+          </div>
           <select
             name="idfa_status_source"
             id="idfa_status_source"
@@ -47,7 +63,10 @@
           ></select>
         </div>
         <div class="item item-6">
-          <label for="idfa_status_client">IDFA/GAID Status (client app)</label>
+          <div class="tool_tip">
+            <label for="idfa_status_client">IDFA Status (client app)</label>
+            <div class="tip">Please select</div>
+          </div>
           <select
             name="idfa_status_client"
             id="idfa_status_client"
@@ -63,9 +82,69 @@
         </div>
       </form>
       <div class="main_result">
-        <p class="current_selected_inputs"></p>
+        <!-- <p class="current_selected_inputs"></p> -->
+        <div class="icon_container">
+          <div class="icon icon-1">
+            <div class="icon_image">
+              <!-- <img id="" alt="" /> -->
+            </div>
+            <div class="icon_details">
+              <h4>Email</h4>
+              <h3>(channel)</h3>
+            </div>
+          </div>
+          <div class="icon icon-2">
+            <div class="icon_image">
+              <!-- <img src="images/braze.png" alt="" /> -->
+            </div>
+            <div class="icon_details">
+              <h4>Braze</h4>
+              <h3>(Partner)</h3>
+            </div>
+          </div>
+          <div class="icon icon-3">
+            <div class="icon_image">
+              <!-- <img src="images/android.png" alt="" /> -->
+            </div>
+            <div class="icon_details">
+              <h4>Android</h4>
+              <h3>(Platform)</h3>
+            </div>
+          </div>
+          <div class="icon icon-4">
+            <div class="icon_image">
+              <!-- <img src="images/app-installed.png" alt=" " /> -->
+            </div>
+            <div class="icon_details">
+              <h4>App Installed</h4>
+              <h3>(App Status)</h3>
+            </div>
+          </div>
+          <div class="icon icon-5">
+            <div class="icon_image">
+              <!-- <img src="images/idfa-source-na.png" alt=" " /> -->
+            </div>
+            <div class="icon_details">
+              <h4>Not Applicable</h4>
+              <h3>(IDFA status-source app)</h3>
+            </div>
+          </div>
+          <div class="icon icon-6">
+            <div class="icon_image">
+              <!-- <img src="images/idfa-client-na.png" alt="channel" /> -->
+            </div>
+            <div class="icon_details">
+              <h4>Not Applicable</h4>
+              <h3>(IDFA status-client app)</h3>
+            </div>
+          </div>
+        </div>
+
         <div class="result result-1">
-          <label for="link_type">Recommended Link Type</label>
+          <div class="tool_tip">
+            <label for="link_type">Recommended Link Type</label>
+            <div class="tip">Please select</div>
+          </div>
           <input
             type="text"
             name="link_type"
@@ -75,7 +154,10 @@
           />
         </div>
         <div class="result result-2">
-          <label for="deeplink">Deep Link Should Work?</label>
+          <div class="tool_tip">
+            <label for="deeplink">Deeplink Should Work?</label>
+            <div class="tip">Please select</div>
+          </div>
           <input
             type="text"
             name="deeplink"
@@ -85,7 +167,10 @@
           />
         </div>
         <div class="result result-3">
-          <label for="branch_method">Branch Attribution Method</label>
+          <div class="tool_tip">
+            <label for="branch_method">Branch Attribution Method</label>
+            <div class="tip">Please select</div>
+          </div>
           <input
             type="text"
             name="branch_method"
@@ -95,7 +180,10 @@
           />
         </div>
         <div class="result result-4">
-          <label for="branch_type">Branch Attribution Type</label>
+          <div class="tool_tip">
+            <label for="branch_type">Branch Attribution Type</label>
+            <div class="tip">Please select</div>
+          </div>
           <input
             type="text"
             name="branch_type"
@@ -105,7 +193,10 @@
           />
         </div>
         <div class="result result-5">
-          <label for="impact">IOS Private Relay Impact</label>
+          <div class="tool_tip">
+            <label for="impact">IOS Private Relay Impact</label>
+            <div class="tip">Please select</div>
+          </div>
           <input
             type="text"
             name="impact"
@@ -115,7 +206,10 @@
           />
         </div>
         <div class="result result-6">
-          <label for="cost_data">Cost Data</label>
+          <div class="tool_tip">
+            <label for="cost_data">Cost Data</label>
+            <div class="tip">Please select</div>
+          </div>
           <input
             type="text"
             name="cost_data"
@@ -125,7 +219,10 @@
           />
         </div>
         <div class="result result-7">
-          <label for="open_data">Install / Open Data</label>
+          <div class="tool_tip">
+            <label for="open_data">Install / Open Data</label>
+            <div class="tip">Please select</div>
+          </div>
           <input
             type="text"
             name="open_data"
@@ -135,7 +232,10 @@
           />
         </div>
         <div class="result result-8">
-          <label for="revenue">Post Click Revenue</label>
+          <div class="tool_tip">
+            <label for="revenue">Post Click Revenue</label>
+            <div class="tip">Please select</div>
+          </div>
           <input
             type="text"
             name="revenue"
@@ -145,7 +245,10 @@
           />
         </div>
         <div class="result result-9">
-          <label for="sign_ups">Post Install Sign-ups</label>
+          <div class="tool_tip">
+            <label for="sign_ups">Post Install Sign-ups</label>
+            <div class="tip">Please select</div>
+          </div>
           <input
             type="text"
             name="sign_ups"
@@ -157,7 +260,7 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.mjs"></script>
     <div class="loader"><h3>Loading...</h3></div>
     <div class="error_field"><h3>Please select all the fields !</h3></div>
   </body>
