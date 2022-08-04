@@ -40,17 +40,19 @@ body {
 .tip {
   position: absolute;
   left: 70%;
-  top: -170%;
-  height: 30px;
-  width: 150px;
+  top: -300%;
+  height: 60px;
+  width: 250px;
   background-color: #dfdfdf;
   border: #dfdfdf solid 1px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  line-height: 12px;
+  padding: 0px 5px;
 }
 
 .tip::after {
